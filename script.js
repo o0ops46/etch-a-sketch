@@ -1,5 +1,5 @@
+'use strict';
 //create an element - DOES NOT put it in the DOM, just creates it.
-const container = document.createElement('div');
 // adding several style rules
 // !       Editing Attributes
 // div.setAttribute('id', 'theDiv')
@@ -43,6 +43,19 @@ const container = document.createElement('div');
 
 //
 
-for (let i = 0; i < 16; i++) {
+//select the container
+const container = document.querySelector('#container');
+container.setAttribute(
+  'style',
+  'margin-top: 200px; margin-left: 200px; width: 300px; height: 300px;'
+);
+for (let i = 0; i < 270; i++) {
+  //create div
   const div = document.createElement('div');
+  //style div
+  div.setAttribute(
+    'style',
+    'background-color: red; display: inline-block; width: 16px; height: 16px;'
+  );
+  container.appendChild(div);
 }
