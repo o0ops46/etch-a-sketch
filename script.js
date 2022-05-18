@@ -59,35 +59,42 @@ for (let i = 0; i < 195; i++) {
   );
   container.appendChild(div);
 }
+const allDivs = document.querySelectorAll("div");
+allDivs.forEach((div) => {
+  div.addEventListener("mousemove", () => {
+    div.setAttribute("style", "background-color:grey");
+  });
+});
+
 // EVENTS
 //method 1
 // {/* <button onclick="alert('Hello World')">Click me</button>;  */} goes in HTML file
 //method 2
 // {/* <button id='btn'>Click me</button> */} goes in html file.
-const btn = document.querySelector("#btn");
-btn.onclick = () => alert("button event");
-const secondBtn = document.querySelector("#secondBtn");
-secondBtn.addEventListener("click", () => {
-  alert("Yeeeey, you clicked me.");
-});
-btn.addEventListener("click", function (e) {
-  console.log(e);
-});
-btn.addEventListener("click", function (e) {
-  console.log(e.target);
-});
-btn.addEventListener("click", function (e) {
-  e.target.style.background = "blue";
-});
-// attaching listeners to groups of nodes.
-//buttons is a node list. It looks and acts much like an array.
-const buttons = document.querySelectorAll("button");
-//we use the .forEach method to iterate through each button
-buttons.forEach((button) => {
-  //and for each one we add a 'click' listener
-  button.addEventListener("click", () => {
-    alert(button.id);
-  });
-});
+// const btn = document.querySelector("#btn");
+// btn.onclick = () => alert("button event");
+// const secondBtn = document.querySelector("#secondBtn");
+// secondBtn.addEventListener("click", () => {
+//   alert("Yeeeey, you clicked me.");
+// });
+// btn.addEventListener("click", function (e) {
+//   console.log(e);
+// });
+// btn.addEventListener("click", function (e) {
+//   console.log(e.target);
+// });
+// btn.addEventListener("click", function (e) {
+//   e.target.style.background = "blue";
+// });
+// // attaching listeners to groups of nodes.
+// //buttons is a node list. It looks and acts much like an array.
+// const buttons = document.querySelectorAll("button");
+// //we use the .forEach method to iterate through each button
+// buttons.forEach((button) => {
+//   //and for each one we add a 'click' listener
+//   button.addEventListener("click", () => {
+//     alert(button.id);
+//   });
+// });
 
 // other useful events are click, dblclick, keydown, keyup
