@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 //create an element - DOES NOT put it in the DOM, just creates it.
 // adding several style rules
 // !       Editing Attributes
@@ -44,18 +44,50 @@
 //
 
 //select the container
-const container = document.querySelector('#container');
+const container = document.querySelector("#container");
 container.setAttribute(
-  'style',
-  'margin-top: 200px; margin-left: 200px; width: 300px; height: 300px;'
+  "style",
+  "margin-top: 200px;background-color: blue; margin-left: 200px; width: 300px; height: 300px;"
 );
-for (let i = 0; i < 270; i++) {
+for (let i = 0; i < 195; i++) {
   //create div
-  const div = document.createElement('div');
+  const div = document.createElement("div");
   //style div
   div.setAttribute(
-    'style',
-    'background-color: red; display: inline-block; width: 16px; height: 16px;'
+    "style",
+    "background-color: red; padding: 1px;margin: 1px; display: inline-block; width: 16px; height: 16px;"
   );
   container.appendChild(div);
 }
+// EVENTS
+//method 1
+// {/* <button onclick="alert('Hello World')">Click me</button>;  */} goes in HTML file
+//method 2
+// {/* <button id='btn'>Click me</button> */} goes in html file.
+const btn = document.querySelector("#btn");
+btn.onclick = () => alert("button event");
+const secondBtn = document.querySelector("#secondBtn");
+secondBtn.addEventListener("click", () => {
+  alert("Yeeeey, you clicked me.");
+});
+btn.addEventListener("click", function (e) {
+  console.log(e);
+});
+btn.addEventListener("click", function (e) {
+  console.log(e.target);
+});
+btn.addEventListener("click", function (e) {
+  e.target.style.background = "blue";
+});
+// attaching listeners to groups of nodes.
+//buttons is a node list. It looks and acts much like an array.
+const buttons = document.querySelectorAll("button");
+//we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+  //and for each one we add a 'click' listener
+  button.addEventListener("click", () => {
+    alert(button.id);
+  });
+});
+
+// other useful events are click, dblclick, keydown, keyup
