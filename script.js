@@ -43,6 +43,8 @@
 
 //
 
+// function hover elements
+
 //select the container
 const container = document.querySelector("#container");
 container.setAttribute(
@@ -58,13 +60,11 @@ for (let i = 0; i < 195; i++) {
     "background-color: red; padding: 1px;margin: 1px; display: inline-block; width: 16px; height: 16px;"
   );
   container.appendChild(div);
+  const changeColor = () => {
+    div.style.backgroundColor = "grey";
+  };
+  div.addEventListener("mouseover", changeColor);
 }
-const allDivs = document.querySelectorAll("div");
-allDivs.forEach((div) => {
-  div.addEventListener("mousemove", () => {
-    div.setAttribute("style", "background-color:grey");
-  });
-});
 
 // EVENTS
 //method 1
