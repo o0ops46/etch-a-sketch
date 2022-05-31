@@ -9,14 +9,16 @@
   font-family: sans-serif;
   font-size: large;
 }
-#box-container {
-  background-color: grey;
-  height: 500px;
-  width: 500px;
-}
+
 .container {
   width: 960px;
   height: auto;
   margin: 100px 100px;
   display: flex;
+}
+#box-container {
+  background-color: grey;
+  height: 500px;
+  display: grid;
+  width: 500px;
 }
