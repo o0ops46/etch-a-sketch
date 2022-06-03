@@ -22,7 +22,7 @@ const createBox = (size) => {
 const getSize = () => {
   let size = prompt("Please enter the size between 2 - 100");
   resetGrid();
-  if ((size) => 2 && size <= 100) {
+  if (size >= 2 && size <= 100) {
     createBox(size);
   } else alert("Error, please enter a number between 2 and 100");
 };
